@@ -1,11 +1,11 @@
 const planService = require('../services/plan-service');
 
-function plansList(req, res){
-    const plans = planService.getAllPlans()
+async function plansList(req, res){
+    const plans = await planService.getAllPlans()
     return res.status(200).json(plans);
 }
 
-function planAdding(req, res){
+async function planAdding(req, res){
 
     const {plan} = req.body; //postman
 
@@ -14,7 +14,7 @@ function planAdding(req, res){
     }
 
     try{
-        const plans = planService.addPlan(plan)
+        const plans = await planService.addPlan(plan)
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
@@ -22,11 +22,11 @@ function planAdding(req, res){
     }
 }
 
-function planDeleting(req, res) {
+async function planDeleting(req, res) {
     const id = req.params.id
 
     try{
-        const plans = planService.deletePlan(id)
+        const plans = await planService.deletePlan(id)
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
@@ -34,12 +34,12 @@ function planDeleting(req, res) {
     }
 }
 
-function planEditing(req, res) {
+async function planEditing(req, res) {
     const id = req.params.id
     const {plan} = req.body; //postman
 
     try{
-        const plans = planService.editPlan(id, plan)
+        const plans = await planService.editPlan(id, plan)
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
