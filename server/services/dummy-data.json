@@ -1,0 +1,24 @@
+{
+    "plans": [
+        {
+            "id": "1",
+            "title": "bbq with friends",
+            "place": "Haifa",
+            "date": "21/07/2022 18:00",
+            "partifications": [
+                "Ori Hassid",
+                "Ouriel Ohayon"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "beach party",
+            "place": "Tel Aviv",
+            "date": "22/07/2022 23:00",
+            "partifications": [
+                "Avihay Kuperberg",
+                "Yuilia Kuderko"
+            ]
+        }
+    ]
+}
