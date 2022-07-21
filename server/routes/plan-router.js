@@ -1,12 +1,11 @@
 const express  = require("express");
-const {
-  plansList,
-} = require( "../controllers/plan-controller.js")
+const planController = require( "../controllers/plan-controller.js");
 
-const plans = require( "../services/dummy-data.json")
 const planRouter = express.Router();
 
-planRouter.get("/", plansList);
-
+planRouter.get("/", planController.plansList);
+planRouter.post("/", planController.planAdding);
+planRouter.delete("/:id", planController.planDeleting)
+planRouter.put("/:id", planController.planEditing)
 
 module.exports =  planRouter;
