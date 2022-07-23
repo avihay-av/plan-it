@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import {fetchPlans} from '../../api/plan'
+import InputPlans from '../InputPlans/InputPlans'
 import PlansList from '../PlansList/PlansList'
 
 
@@ -17,7 +18,7 @@ function AppContainer() {
   return (
     
     <div>
-      
+      <InputPlans/>
       <PlansList plans={plans}/>
     </div>
   )
