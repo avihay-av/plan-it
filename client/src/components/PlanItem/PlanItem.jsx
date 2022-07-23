@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import PlansList from '../PlansList/PlansList';
 import "./PlanItem.css"
 
-function PlanItem({plan,color}) {
+function PlanItem({plan}) {
   const [planEvent,setplanEvent] = useState(plan);
     const handleInputOnChange = (event) =>{
       setplanEvent(event.target.value);
     }
-
+  
+    function deletePlan(id){
+      
+    }
     
   return (
     <ul className=''>
@@ -27,6 +30,12 @@ function PlanItem({plan,color}) {
         <h3>{plan.date}</h3>
         
         {plan.partifications.map(partification => <p key={partification}>{partification}</p>)}
+
+        <button
+            className="deleteButton"
+            onClick={deletePlan}
+            fontSize="inherit"
+          >🗑️</button>
         </div>
     </ul>
   )

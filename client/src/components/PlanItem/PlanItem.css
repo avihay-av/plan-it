@@ -60,3 +60,9 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
+
+  .deleteButton{
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
