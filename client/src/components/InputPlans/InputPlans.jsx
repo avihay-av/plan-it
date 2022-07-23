@@ -10,25 +10,26 @@ const InputPlans = ({props}) =>{
     }
     const handleButtonClick = async() =>{
         try {
-            if(!inputValue){
-                alert("Enter input")
+            if(inputValue === ""){
+              alert("Error Invalid empty Input ")
             }
+            setInputValue("");
         }catch (error) {
             alert("Error To Render While Button Clicked")
         }
     }
 
     return (
-        <div>
+        <div className="divInputPlans" >
             <div>
                 <input 
                     type="text"
-                    className=""
+                    className="plansInput"
                     onChange={handleInputValue}
                     value={inputValue}
                     placeholder ="Enter New Event"
                 />
-                <Button type="button" onClick = {handleButtonClick}>ADD EVENT</Button>
+                <Button className="button button-87"  type="button" onClick = {handleButtonClick}>ADD EVENT</Button>
             </div>
         </div>
     )
