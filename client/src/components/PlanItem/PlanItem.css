@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+}
+
+.input-div {
+    background: url('../../images/bbq-img.jpg') center center/cover no-repeat; 
+    color: aliceblue;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    height: 400px;
+    font-weight: bolder;
+    margin: 0 auto;
+    max-width: 400px;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    display: inline-block;
+    border-radius: 1rem;
+  }
+  .inputText{
+    width: 200px;
+    
+  }
+  .bg {
+    
+    -webkit-background-size: cover;
+    background-size: cover;
+    filter: brightness(.7);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .bg.no-image {
+    background-image: none;
+  }
+  
+  .bg:after {
+    content: ' ';
+    background-color: #7f58b1;
+    opacity: .5;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .bg2 {
+    background: url('../../images/friedns.jpg') center center/cover no-repeat;
+    filter: contrast(0.5) brightness(.7);
+    height: 100%;
+    opacity: .01;
+    position: absolute;
+    top: 0;
+    transition: opacity 200ms, transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-100px);
+    width: 100%;
+  }
+  
+  .bg2.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .deleteButton{
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
