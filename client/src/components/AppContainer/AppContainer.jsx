@@ -9,8 +9,6 @@ function AppContainer() {
   const [plans, setPlans] = useState([])
 
   useEffect(() => {
-    //prevent from rendering twice react 18
-    
     fetchPlans().then(fetchedPlans => {
       setPlans(fetchedPlans)
     })
@@ -21,7 +19,7 @@ function AppContainer() {
     <div className="App">
       <CardList/>
       {/* <InputPlans/> */}
-      {/* <PlansList plans={plans}/> */}
+      <PlansList plans={plans}/>
       <Footer/>
     </div>
   )

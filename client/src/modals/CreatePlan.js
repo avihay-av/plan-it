@@ -5,8 +5,7 @@ const CreateplanPopup = ({modal, toggle, save}) => {
     const [planName, setplanName] = useState('');
     const [description, setDescription] = useState('');
 
-    const handleChange = (e) => {
-        
+    const handleChange = (e) => {  
         const {name, value} = e.target
 
         if(name === "planName"){
@@ -14,8 +13,6 @@ const CreateplanPopup = ({modal, toggle, save}) => {
         }else{
             setDescription(value)
         }
-
-
     }
 
     const handleSave = (e) => {
@@ -24,23 +21,31 @@ const CreateplanPopup = ({modal, toggle, save}) => {
         planObj["Name"] = planName
         planObj["Description"] = description
         save(planObj)
-
     }
 
     return (
         <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Create plan</ModalHeader>
             <ModalBody>
-            
                     <div className = "form-group">
                         <label>plan Name</label>
-                        <input type="text" className = "form-control" value = {planName} onChange = {handleChange} name = "planName"/>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            value={planName} 
+                            onChange={handleChange} 
+                            name="planName"/>
                     </div>
-                    <div className = "form-group">
+                    <div className="form-group">
                         <label>Description</label>
-                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
-                    </div>
-                
+                        <textarea 
+                            rows="5" 
+                            className="form-control" 
+                            value={description} 
+                            onChange={handleChange} 
+                            name="description">
+                        </textarea>
+                    </div>        
             </ModalBody>
             <ModalFooter>
             <Button color="primary" onClick={handleSave}>Create</Button>{' '}

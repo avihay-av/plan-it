@@ -50,12 +50,23 @@ const CardList = () => {
         <>
             <div className = "header text-center">
                 <h3>ENTER NEW EVENT</h3>
-                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >Create plan</button>
+                <button 
+                    className="btn btn-primary mt-2" 
+                    onClick = {() => setModal(true)} >
+                        Create plan
+                </button>
             </div>
-            <div className = "plan-container">
-            {planList && planList.map((obj , index) => <Card planObj = {obj} index = {index} deleteplan = {deleteplan} updateListArray = {updateListArray}/> )}
+            <div className="plan-container">
+                {
+                planList && planList.map((obj , index) => 
+                    <Card planObj={obj} 
+                    index={index} 
+                    key={index}
+                    deleteplan={deleteplan} 
+                    updateListArray={updateListArray}/>)
+                }
             </div>
-            <Createplan toggle = {toggle} modal = {modal} save = {saveplan}/>
+            <Createplan toggle={toggle} modal={modal} save={saveplan}/>
         </>
     );
 };

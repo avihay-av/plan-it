@@ -4,11 +4,12 @@ import DatePicker from "react-datepicker";
 
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
+
     const [planName, setplanName] = useState('');
     const [description, setDescription] = useState('');
     const [startDate, setStartDate] = useState(new Date());
-    const handleChange = (e) => {
-        
+
+    const handleChange = (e) => {  
         const {name, value} = e.target
 
         if(name === "planName"){
@@ -16,8 +17,6 @@ const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
         }else{
             setDescription(value)
         }
-
-
     }
 
     useEffect(() => {
@@ -57,10 +56,7 @@ const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
                         </span>
                     </div>
                 </div>
-                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                
-                    
-                
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />  
             </ModalBody>
             <ModalFooter>
             <Button color="primary" onClick={handleUpdate}>Update</Button>{' '}

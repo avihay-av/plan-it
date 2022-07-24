@@ -9,11 +9,10 @@ import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-    <div className="App">
-      <AppContainer />
-      
-    </div>
+      <Navbar/>
+      <div className="App">
+        <AppContainer />
+      </div>
     </BrowserRouter>
   );
 }

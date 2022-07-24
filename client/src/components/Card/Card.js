@@ -40,18 +40,27 @@ const Card = ({planObj, index, deleteplan, updateListArray}) => {
     }
 
     return (
-        <div class = "card-wrapper mr-5">
-            <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
-            <div class = "plan-holder">
-                <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{planObj.Name}</span>
-                <p className = "mt-3">{planObj.Description}</p>
-
+        <div className="card-wrapper mr-5">
+            <div className="card-top" style={{backgroundColor: colors[index%5].primaryColor}}></div>
+            <div className="plan-holder">
+                <span 
+                    className="card-header" 
+                    style={{backgroundColor: colors[index%5].secondaryColor}}>
+                        {planObj.Name}
+                </span>
+                <p className="mt-3">
+                    {planObj.Description}
+                </p>
                 <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
-                    <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
-                    <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
+                    <i className="far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={() => setModal(true)}></i>
+                    <i className="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={handleDelete}></i>
                 </div>
         </div>
-        <Editplan modal = {modal} toggle = {toggle} updateplan = {updateplan} planObj = {planObj}/>
+        <Editplan 
+            modal={modal} 
+            toggle={toggle} 
+            updateplan={updateplan} 
+            planObj={planObj}/>
         </div>
     );
 };
