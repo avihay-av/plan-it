@@ -51,9 +51,13 @@ const Card = ({planObj, index, deleteplan, updateListArray}) => {
                 <p className="mt-3">
                     {planObj.Description}
                 </p>
-                <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>
-                    <i className="far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={() => setModal(true)}></i>
-                    <i className="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={handleDelete}></i>
+                <div className='card-edit-delete-container'>
+                    <i className="far fa-edit mr-3 edit-icon" 
+                        style={{"color" : colors[index%5].primaryColor}} 
+                        onClick={() => setModal(true)}></i>
+                    <i className="fas fa-trash-alt delete-icon" 
+                        style = {{"color" : colors[index%5].primaryColor}} 
+                        onClick={handleDelete}></i>
                 </div>
         </div>
         <Editplan 
