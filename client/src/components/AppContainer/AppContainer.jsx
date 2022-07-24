@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {fetchPlans} from '../../api/plan'
 import InputPlans from '../InputPlans/InputPlans'
 import PlansList from '../PlansList/PlansList'
-import Monday from "../Monday/Monday"
+import CardList from '../Card/CardList'
 import Footer from '../Footer/Footer'
 
 function AppContainer() {
@@ -18,10 +18,11 @@ function AppContainer() {
 
   return (
     
-    <div>
-      <InputPlans/>
-      <PlansList plans={plans}/>
-      
+    <div className="App">
+      <CardList/>
+      {/* <InputPlans/> */}
+      {/* <PlansList plans={plans}/> */}
+      <Footer/>
     </div>
   )
 }

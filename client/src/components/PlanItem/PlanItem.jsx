@@ -7,7 +7,13 @@ function PlanItem({plan}) {
     const handleInputOnChange = (event) =>{
       setplanEvent(event.target.value);
     }
-  
+    
+    // const enterPalnInput =  (plan) => {
+    //   const array = [];
+    //    array.map(plan => array.push(<p>{plan}</p>));
+    //    return array
+    // } 
+
     function deletePlan(id){
       
     }
